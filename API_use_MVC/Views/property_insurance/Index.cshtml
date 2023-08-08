@@ -1,0 +1,66 @@
+﻿@model List<API_use_MVC.Models.property_insuranceData>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API 資料顯示</title>
+</head>
+<body>
+    <h1>API 回傳的資料：</h1>
+    <font style="font-size: 25px;">查看api原始位置</font><a href="https://ins-info.ib.gov.tw/opendata/json-06161601.aspx" style="font-size: 25px;">請點此</a>
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="table">
+            <tr>
+                <th>ClaimYear</th>
+                <th>ClaimQuarter</th>
+                <th>INSURER_Name</th>
+                <th>AMOUNT1</th>
+                <th>AMOUNT2</th>
+                <th>AMOUNT3</th>
+                <th>AMOUNT4</th>
+                <th>AMOUNT5</th>
+                <th>AMOUNT6</th>
+                <th>AMOUNT7</th>
+                <th>AMOUNT8</th>
+                <th>AMOUNT9</th>
+                <th>AMOUNT10</th>
+                <th>AMOUNT11</th>
+                <th>AMOUNT12</th>
+                <th>AMOUNT13</th>
+                <th>AMOUNT14</th>
+                <th>AMOUNT15</th>
+                <th>AMOUNT16</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ClaimYear</td>
+                    <td>@item.ClaimQuarter</td>
+                    <td>@item.INSURER_Name</td>
+                    <td>@item.AMOUNT1</td>
+                    <td>@item.AMOUNT2</td>
+                    <td>@item.AMOUNT3</td>
+                    <td>@item.AMOUNT4</td>
+                    <td>@item.AMOUNT5</td>
+                    <td>@item.AMOUNT6</td>
+                    <td>@item.AMOUNT7</td>
+                    <td>@item.AMOUNT8</td>
+                    <td>@item.AMOUNT9</td>
+                    <td>@item.AMOUNT10</td>
+                    <td>@item.AMOUNT11</td>
+                    <td>@item.AMOUNT12</td>
+                    <td>@item.AMOUNT13</td>
+                    <td>@item.AMOUNT14</td>
+                    <td>@item.AMOUNT15</td>
+                    <td>@item.AMOUNT16</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>無法取得 API 資料。</p>
+    }
+</body>
+</html>

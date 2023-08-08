@@ -1,0 +1,44 @@
+﻿@model List<API_use_MVC.Models.StockData>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API 資料顯示</title>    
+</head>
+<body>
+    <h1>API 回傳的資料：</h1>
+    <font style="font-size: 25px;">查看api原始位置</font><a href="https://ins-info.ib.gov.tw/opendata/json-05030311.aspx" style="font-size: 25px;">請點此</a>
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="table">
+            <tr>
+                <th>OccurDate</th>
+                <th>OccurSeason</th>
+                <th>INSURER_Name</th>
+                <th>StockholderName</th>
+                <th>Shares</th>
+                <th>SharesRatio</th>
+                <th>PledgeShares</th>
+                <th>PledgeSharesRatio</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OccurDate</td>
+                    <td>@item.OccurSeason</td>
+                    <td>@item.INSURER_Name</td>
+                    <td>@item.StockholderName</td>
+                    <td>@item.Shares</td>
+                    <td>@item.SharesRatio</td>
+                    <td>@item.PledgeShares</td>
+                    <td>@item.PledgeSharesRatio</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>無法取得 API 資料。</p>
+    }
+</body>
+</html>
